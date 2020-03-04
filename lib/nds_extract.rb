@@ -26,9 +26,9 @@ def directors_totals(nds)
     movies = director[:movies]
     # instantiate director key and value
     result[director_name] = 0
-    
+
   end
-  
+
 
 
   #
