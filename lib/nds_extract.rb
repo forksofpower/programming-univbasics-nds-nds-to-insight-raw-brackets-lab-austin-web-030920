@@ -37,7 +37,10 @@ def directors_totals(nds)
 
   # build result hash by reducing directors array
   # using the :name String value as the hash key.
-  pp nds.reduce({}) { |r, d| pp r }
+  pp nds.reduce({}) { |r, d| 
+    r[d[:name]] = 0
+    pp r
+   }
 
 
 
