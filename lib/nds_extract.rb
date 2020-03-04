@@ -34,7 +34,7 @@ def directors_totals(nds)
   #   row_index += 1
   # end
 
-  # build result hash by reducing directors array 
+  # build result hash by reducing directors array
   # using the :name String value as the hash key.
   result = nds.reduce({}) { |r, d| r[d[:name]] = d[:movies].map{|m| m[:worldwide_gross]}.reduce(:+) }
 
