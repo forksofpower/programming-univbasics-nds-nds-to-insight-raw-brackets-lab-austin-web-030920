@@ -18,6 +18,18 @@ def directors_totals(nds)
   #
   # this could also be done with a map and reducing... (mapReduce?)
 
+  # loop through array of directors
+  row_index = 0
+  while row_index < nds.count do
+    director = nds[row_index]
+    director_name = director[:name]
+    movies = director[:movies]
+    # instantiate director key and value
+    result[director_name] = 0
+    
+  end
+  
+
 
   #
   # Use loops, variables and the accessing method, [], to loop through the NDS
