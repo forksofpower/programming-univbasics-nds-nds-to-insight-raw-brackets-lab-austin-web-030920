@@ -20,7 +20,7 @@ def directors_totals(nds)
     director_name = director[:name]
     # instantiate director key and value
     result[director_name] = 0
-  
+
     # loop through array of movies
     movies = director[:movies]
     inner_index = 0
