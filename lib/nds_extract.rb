@@ -2,11 +2,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'directors_database'
 
 def directors_totals(nds)
-  # Remember, it's always OK to pretty print what you get *in* to make sure
-  # that you know what you're starting with!
-  #
-  #
-  # The Hash result be full of things like "Jean-Pierre Jeunet" => "222312123123"
+  #pp nds
   result = {}
 
   # this is how we do it ==>
@@ -31,10 +27,10 @@ def directors_totals(nds)
       movie = movies[inner_index]
       # add :worldwide_gross to sum in result hash
       result[director_name] += movie[:worldwide_gross]
-
+      # increment inner loop
       inner_index += 1
     end
-
+    # increment outer loop
     row_index += 1
   end
 
