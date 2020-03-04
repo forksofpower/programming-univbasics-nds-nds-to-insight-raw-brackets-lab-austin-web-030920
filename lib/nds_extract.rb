@@ -9,16 +9,19 @@ def directors_totals(nds)
   #
   # The Hash result be full of things like "Jean-Pierre Jeunet" => "222312123123"
   pp nds
-  result = {
-  }
+  result = {}
+
+  # this is how we do it ==>
+  #   loop through array of directors
+  #   add each director :name as key to result object
+  #   for each of director's movies, add to director's total
+  #
+  # this could also be done with a map and reducing... (mapReduce?)
+
+
   #
   # Use loops, variables and the accessing method, [], to loop through the NDS
-  # and total up all the
-  # ...
-  # ...
-  # ...
-  #
-  #
+  # and total up all the :worldwide_gross
   # Be sure to return the result at the end!
   nil
 end
