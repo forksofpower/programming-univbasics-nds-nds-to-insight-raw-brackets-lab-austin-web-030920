@@ -14,30 +14,30 @@ def directors_totals(nds)
   # this could also be done with a map and reducing... (mapReduce?)
 
   # loop through array of directors
-  # row_index = 0
-  # while row_index < nds.count do
-  #   director = nds[row_index]
-  #   director_name = director[:name]
-  #   # instantiate director key and value
-  #   result[director_name] = 0
-  #
-  #   # loop through array of movies
-  #   movies = director[:movies]
-  #   inner_index = 0
-  #   while inner_index < movies.count do
-  #     movie = movies[inner_index]
-  #     # add :worldwide_gross to sum in result hash
-  #     result[director_name] += movie[:worldwide_gross]
-  #     # increment inner loop
-  #     inner_index += 1
-  #   end
-  #   # increment outer loop
-  #   row_index += 1
-  # end
+  row_index = 0
+  while row_index < nds.count do
+    director = nds[row_index]
+    director_name = director[:name]
+    # instantiate director key and value
+    result[director_name] = 0
+  
+    # loop through array of movies
+    movies = director[:movies]
+    inner_index = 0
+    while inner_index < movies.count do
+      movie = movies[inner_index]
+      # add :worldwide_gross to sum in result hash
+      result[director_name] += movie[:worldwide_gross]
+      # increment inner loop
+      inner_index += 1
+    end
+    # increment outer loop
+    row_index += 1
+  end
 
   # build result hash by reducing directors array
   # using the :name String value as the hash key.
-  pp nds.reduce({}) { |r, d| r[d[:name]] = d[:movies].map{|m| m[:worldwide_gross]}.reduce(:+)}
+  # pp nds.reduce({}) { |r, d| r[d[:name]] = d[:movies].map{|m| m[:worldwide_gross]}.reduce(:+)}
 
 
 
