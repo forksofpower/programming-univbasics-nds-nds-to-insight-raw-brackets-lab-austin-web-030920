@@ -23,10 +23,20 @@ def directors_totals(nds)
   while row_index < nds.count do
     director = nds[row_index]
     director_name = director[:name]
-    movies = director[:movies]
     # instantiate director key and value
     result[director_name] = 0
 
+    # loop through array of movies
+    movies = director[:movies]
+    inner_index = 0
+    while inner_index < movies.count do
+      movie = movies[inner_index]
+      result[director_name] += movie[:worldwide_gross]
+      
+      inner_index += 1
+    end
+    
+    row_index += 1
   end
 
 
