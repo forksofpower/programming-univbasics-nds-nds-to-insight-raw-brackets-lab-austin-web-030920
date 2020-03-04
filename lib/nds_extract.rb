@@ -31,6 +31,7 @@ def directors_totals(nds)
     inner_index = 0
     while inner_index < movies.count do
       movie = movies[inner_index]
+      # add :worldwide_gross to sum in result hash
       result[director_name] += movie[:worldwide_gross]
 
       inner_index += 1
@@ -45,5 +46,5 @@ def directors_totals(nds)
   # Use loops, variables and the accessing method, [], to loop through the NDS
   # and total up all the :worldwide_gross
   # Be sure to return the result at the end!
-  nil
+  result
 end
